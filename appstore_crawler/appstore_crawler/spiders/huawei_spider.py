@@ -20,7 +20,13 @@ class HuaweiSpider(scrapy.Spider):
 
         for href in hrefs:
             url = href.extract()
-            yield scrapy.Request(url, callback = self.parse_item)
+            # yield scrapy.Request(url, callback = self.parse_item)
+            yield scrapy.Request(url, self.parse_item, meta={
+                'splash': {
+                    'endpoint' : 'render.html',
+                    'args' : {'wait': 0.5}
+                }
+            })
 
     """
         Extract information for app detail page

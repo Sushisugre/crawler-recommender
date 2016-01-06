@@ -55,7 +55,7 @@ DOWNLOADER_MIDDLEWARES = {
    'scrapyjs.SplashMiddleware' : 725,
 }
 
-SPLASH_URL = 'http://localhost:8050/'
+SPLASH_URL = 'http://192.168.99.100:8050/'
 DUPEFILTER_CLASS = 'scrapyjs.SplashAwareDupeFilter'
 HTTPCACHE_STORAGE = 'scrapyjs.SplashAwareFSCacheStorage'
 
