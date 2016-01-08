@@ -51,8 +51,13 @@ DOWNLOAD_DELAY=5
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    # 'appstore_crawler.middlewares.MyCustomDownloaderMiddleware': 543,
+   
    # name: priority number
    'scrapyjs.SplashMiddleware' : 725,
+   # disable the default scrapy useragent middleware
+   'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware' : None,
+   'appstore_crawler.random_useragent.RandomUserAgentMiddleware' : 400,
+   # 'appstore_crawler.random_proxy.RandomProxyMiddleware': 100,
 }
 
 SPLASH_URL = 'http://192.168.99.100:8050/'
